@@ -2,7 +2,6 @@ import { FieldValues, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BsPersonBadgeFill } from "react-icons/bs";
-import OpenWorkList from "./OpenWorkList";
 
 const schema = z.object({
   badge: z.string().min(1, { message: "Your badge ID did not scan." }),
@@ -18,7 +17,6 @@ const BadgeScan = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   const onSubmit = (data: FieldValues) => {
     console.log(data);
-    OpenWorkList();
   };
 
   return (
@@ -29,9 +27,7 @@ const BadgeScan = () => {
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="m-3">
-          <label htmlFor="badge" className="form-label">
-            Badge Number
-          </label>
+          <label className="form-label">Badge Number</label>
           <input
             {...register("badge")}
             type="text"

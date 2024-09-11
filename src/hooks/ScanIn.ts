@@ -3,7 +3,7 @@ import { CanceledError } from "../services/api-client";
 import ordlineworkService, { ordlinework } from "../services/ordlinework-service";
 
 const ScanIn = () => {
-  const [orders, setOrders] = useState<ordlinework[]>([]);
+  const [orders] = useState<ordlinework[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 

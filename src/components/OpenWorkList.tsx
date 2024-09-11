@@ -1,8 +1,7 @@
 import ScanIn from "../hooks/ScanIn";
-import ordlinework from "../services/ordlinework-service";
 
 const OpenWorkList = () => {
-  const { orders, error, isLoading, setError } = ScanIn();
+  const { orders, error, isLoading } = ScanIn();
 
   return (
     <>

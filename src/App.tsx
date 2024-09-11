@@ -1,12 +1,14 @@
+import { useEffect } from "react";
 import "./App.css";
 import BadgeScan from "./components/BadgeScan";
-import OpenWorkList from "./components/OpenWorkList";
 
 function App() {
+  useEffect(() => {
+    document.title = "Cetec App v1.0";
+  });
   return (
     <div>
       <BadgeScan />
-      <OpenWorkList />
     </div>
   );
 }
