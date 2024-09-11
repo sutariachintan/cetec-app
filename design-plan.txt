@@ -1,0 +1,23 @@
+0. user scans their own badge
+   a) this shows all currently open work they have on going
+   https://chintan.cetecerp.com//apioverview/react#/ordlinework/getOrdlineWorkById
+   curl -X 'GET' \
+    'https://chintan.cetecerp.com/api/ordlinework/1' \
+    -H 'accept: application/json'
+
+   b) user has option to stop any item in the list
+   https://chintan.cetecerp.com//apioverview/react#/ordlinework/patchOrdlineWork
+
+   c) if user doesn't have any open items in progress, then an input box is selected by default for them to enter new work order number
+   https://chintan.cetecerp.com//apioverview/react#/ordlinework/putOrdlineWorkByOrdlineID
+
+1. user inputs 1.1-1 (order line number) from license plate
+   a) this pulls up the order details and list of all available work centers
+   https://chintan.cetecerp.com/goapis/api/v1/documentation/index.html#/Order%20Lines%20Labor%20Plan/get_ordline__ordline_id__location_maps
+   b) if work order is not open or valid then generate error
+2. user scans the work center they are physically in (with barcode at their work station or near the equipment they are using) or clicks on it
+   a) this is checked to make sure that the work center they clicked is valid for the work order. if not valid, generate warning
+3. user clicks start work
+   a) generate the api call to start work
+   b) if api call is not successful, then generate error
+4. user clicks stop work
